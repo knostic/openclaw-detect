@@ -13,7 +13,9 @@
 
 > **Find OpenClaw on managed devices.** Lightweight detection scripts for macOS, Linux, and Windows that check for CLI binaries, app bundles, config files, gateway services, and Docker artifacts. Designed for MDM deployment via Jamf, Intune, JumpCloud, and more.
 
-**Like the tool?** Check out how Knostic helps you with visibility and control of your coding agents and MCP/extensions, from Cursor and Claude Code, to Copilot.
+Also check out:
+- **openclaw-telemetry:** https://github.com/knostic/openclaw-telemetry
+- **Like what we do?** Knostic helps you with visibility and control of your coding agents and MCP/extensions, from Cursor and Claude Code, to Copilot.
 
 ---
 
