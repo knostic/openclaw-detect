@@ -48,13 +48,13 @@ Detection scripts for MDM deployment to identify OpenClaw installations on manag
 ### macOS/Linux
 
 ```bash
-curl -sL https://knostic.ai/detect-openclaw.sh | bash
+curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-iwr -useb https://knostic.ai/detect-openclaw.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.ps1 | iex
 ```
 
 ### Run as root/admin
@@ -62,7 +62,7 @@ iwr -useb https://knostic.ai/detect-openclaw.ps1 | iex
 Running with elevated privileges scans all user directories:
 
 ```bash
-curl -sL https://knostic.ai/detect-openclaw.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | sudo bash
 ```
 
 ## Environment Variables
