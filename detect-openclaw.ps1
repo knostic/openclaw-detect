@@ -16,6 +16,7 @@ function Show-Banner {
     Write-Output "  ██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗"
     Write-Output "  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝"
     Write-Output ""
+    Write-Output " Open source from Knostic - https://knostic.ai  (Also check out our other open source tools!)"
     Write-Output " OpenClaw Detection Script"
     Write-Output ""
 }

@@ -16,6 +16,7 @@ print_banner() {
   echo '  ██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗'
   echo '  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝'
   echo ''
+  echo ' Open source from Knostic - https://knostic.ai  (Also check out our other open source tools!)'
   echo ' OpenClaw Detection Script'
   echo ''
 }
