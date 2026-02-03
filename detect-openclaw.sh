@@ -7,6 +7,21 @@ set -euo pipefail
 PROFILE="${OPENCLAW_PROFILE:-}"
 PORT="${OPENCLAW_GATEWAY_PORT:-18789}"
 
+print_banner() {
+  echo ''
+  echo '  ██╗  ██╗███╗   ██╗ ██████╗ ███████╗████████╗██╗ ██████╗'  
+  echo '  ██║ ██╔╝████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██║██╔════╝'
+  echo '  █████╔╝ ██╔██╗ ██║██║   ██║███████╗   ██║   ██║██║     '
+  echo '  ██╔═██╗ ██║╚██╗██║██║   ██║╚════██║   ██║   ██║██║     '
+  echo '  ██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗'
+  echo '  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝'
+  echo ''
+  echo ' OpenClaw Detection Script'
+  echo ''
+}
+
+print_banner
+
 detect_platform() {
   case "$(uname -s)" in
     Darwin) echo "darwin" ;;

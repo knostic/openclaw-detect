@@ -7,6 +7,21 @@ $script:Profile = $env:OPENCLAW_PROFILE
 $Port = if ($env:OPENCLAW_GATEWAY_PORT) { $env:OPENCLAW_GATEWAY_PORT } else { 18789 }
 $script:Output = [System.Collections.ArrayList]::new()
 
+function Show-Banner {
+    Write-Output ""
+    Write-Output "  ██╗  ██╗███╗   ██╗ ██████╗ ███████╗████████╗██╗ ██████╗"  
+    Write-Output "  ██║ ██╔╝████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██║██╔════╝"
+    Write-Output "  █████╔╝ ██╔██╗ ██║██║   ██║███████╗   ██║   ██║██║     "
+    Write-Output "  ██╔═██╗ ██║╚██╗██║██║   ██║╚════██║   ██║   ██║██║     "
+    Write-Output "  ██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗"
+    Write-Output "  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝"
+    Write-Output ""
+    Write-Output " OpenClaw Detection Script"
+    Write-Output ""
+}
+
+Show-Banner
+
 function Out {
     param([string]$Line)
     [void]$script:Output.Add($Line)
