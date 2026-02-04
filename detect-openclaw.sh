@@ -9,14 +9,12 @@ PORT="${OPENCLAW_GATEWAY_PORT:-18789}"
 
 print_banner() {
   echo ''
-  echo '  ██╗  ██╗███╗   ██╗ ██████╗ ███████╗████████╗██╗ ██████╗'  
-  echo '  ██║ ██╔╝████╗  ██║██╔═══██╗██╔════╝╚══██╔══╝██║██╔════╝'
-  echo '  █████╔╝ ██╔██╗ ██║██║   ██║███████╗   ██║   ██║██║     '
-  echo '  ██╔═██╗ ██║╚██╗██║██║   ██║╚════██║   ██║   ██║██║     '
-  echo '  ██║  ██╗██║ ╚████║╚██████╔╝███████║   ██║   ██║╚██████╗'
-  echo '  ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝ ╚═════╝'
+  echo '  _  ___  _  ___  ___  _____ ___ ___'
+  echo ' | |/ / \| |/ _ \/ __|_   _|_ _/ __|'
+  echo ' |   <| .  | (_) \__ \ | |  | | (__ '
+  echo ' |_|\_\_|\_|\___/|___/ |_| |___\___|'
   echo ''
-  echo ' Open source from Knostic - https://knostic.ai  (Also check out our other open source tools!)'
+  echo ' Open source from Knostic - https://knostic.ai'
   echo ' OpenClaw Detection Script'
   echo ''
 }
