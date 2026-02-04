@@ -14,7 +14,7 @@ Kandji supports custom scripts through the Custom Scripts library item.
 
 ```bash
 #!/bin/bash
-curl -sL https://knostic.ai/detect-openclaw.sh | bash
+curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash
 ```
 
 Or embed the full script directly for offline execution.
