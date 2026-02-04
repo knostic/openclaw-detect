@@ -9,7 +9,7 @@ JumpCloud Commands run scripts via the agent on managed devices, capturing stdou
 3. **Command Type:** Shell (macOS/Linux) or PowerShell (Windows)
 4. **Command:**
    ```bash
-   curl -sL https://knostic.ai/detect-openclaw.sh | bash
+   curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash
    ```
 5. **Run as:** root (to scan all users) or current user
 6. **Schedule:** Manual, scheduled, or triggered
@@ -24,7 +24,7 @@ curl -X POST https://console.jumpcloud.com/api/commands/ \
   -H 'x-api-key: YOUR_API_KEY' \
   -d '{
     "name": "OpenClaw Detection",
-    "command": "curl -sL https://knostic.ai/detect-openclaw.sh | bash",
+    "command": "curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash",
     "commandType": "mac",
     "sudo": true,
     "timeout": "120"
@@ -37,7 +37,7 @@ curl -X POST https://console.jumpcloud.com/api/commands/ \
   -H 'x-api-key: YOUR_API_KEY' \
   -d '{
     "name": "OpenClaw Detection (Windows)",
-    "command": "iwr -useb https://knostic.ai/detect-openclaw.ps1 | iex",
+    "command": "iwr -useb https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.ps1 | iex",
     "commandType": "windows",
     "shell": "powershell",
     "timeout": "120"

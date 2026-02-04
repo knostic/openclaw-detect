@@ -17,7 +17,7 @@ Intune Remediations allow you to deploy detection scripts to Windows devices. Fo
 Save as `detect-openclaw.ps1`:
 
 ```powershell
-iwr -useb https://knostic.ai/detect-openclaw.ps1 | iex
+iwr -useb https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.ps1 | iex
 ```
 
 Or embed the full script directly for offline execution.

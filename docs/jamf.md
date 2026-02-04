@@ -10,7 +10,7 @@ Jamf Pro allows you to deploy scripts to macOS devices via Policies.
 4. **Script:**
    ```bash
    #!/bin/bash
-   curl -sL https://knostic.ai/detect-openclaw.sh | bash
+   curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash
    ```
 5. Click **Save**
 

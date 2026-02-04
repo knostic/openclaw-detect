@@ -11,7 +11,7 @@ Workspace ONE UEM supports custom scripts for macOS devices through the Scripts 
 5. **Script:**
    ```bash
    #!/bin/bash
-   curl -sL https://knostic.ai/detect-openclaw.sh | bash
+   curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.sh | bash
    ```
 6. **Execution Context:** System (to scan all users)
 7. **Timeout:** 120 seconds
