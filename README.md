@@ -59,6 +59,10 @@ curl -sL https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/ma
 iwr -useb https://raw.githubusercontent.com/knostic/openclaw-detect/refs/heads/main/detect-openclaw.ps1 | iex
 ```
 
+### Without curl
+
+Copy [`detect-openclaw.sh`](detect-openclaw.sh) (macOS/Linux) or [`detect-openclaw.ps1`](detect-openclaw.ps1) (Windows) and run directly.
+
 ### Run as root/admin
 
 Running with elevated privileges scans all user directories:
