@@ -2,7 +2,9 @@ name: Test Detection Scripts
 
 on:
   push:
-    branches: [win-check]
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   test-unix:
