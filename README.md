@@ -97,6 +97,7 @@ docker-image: not-found
 | Platform | Guide |
 |----------|-------|
 | Addigy | [docs/addigy.md](docs/addigy.md) |
+| CrowdStrike Falcon | [docs/crowdstrike.md](docs/crowdstrike.md) |
 | JumpCloud | [docs/jumpcloud.md](docs/jumpcloud.md) |
 | Microsoft Intune | [docs/intune.md](docs/intune.md) |
 | Jamf Pro | [docs/jamf.md](docs/jamf.md) |
