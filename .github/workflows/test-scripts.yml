@@ -1,0 +1,28 @@
+name: Test Detection Scripts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-unix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run detection script
+        run: |
+          chmod +x detect-openclaw.sh
+          ./detect-openclaw.sh
+
+  test-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run detection script
+        run: .\detect-openclaw.ps1
+        shell: powershell
