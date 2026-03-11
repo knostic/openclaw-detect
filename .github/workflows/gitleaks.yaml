@@ -1,11 +1,19 @@
 name: gitleaks
 on:
   push:
+  pull_request:
 jobs:
   scan:
-    uses: knostic/.github/.github/workflows/gitleaks.yaml@dcc58a2ba99425861ace0857b8644eb2165f2aed
-    with:
-      event_name: ${{ github.event_name }}
-      before_sha: ${{ github.event.before || '' }}
-      forced: ${{ github.event.forced == true }}
-    secrets: inherit
+    name: gitleaks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
