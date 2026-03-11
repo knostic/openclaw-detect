@@ -6,6 +6,9 @@ on:
 jobs:
   scan:
     uses: knostic/.github/.github/workflows/gitleaks.yaml@fix/gitleaks-scan-range
+    permissions:
+      contents: read
+      pull-requests: read
     with:
       event_name: ${{ github.event_name }}
       base_sha: ${{ github.event.pull_request.base.sha || '' }}
