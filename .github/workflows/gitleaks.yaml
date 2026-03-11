@@ -8,7 +8,6 @@ jobs:
     uses: knostic/.github/.github/workflows/gitleaks.yaml@fix/gitleaks-scan-range
     with:
       event_name: ${{ github.event_name }}
-      base_sha: ${{ github.event.pull_request.base.sha || '' }}
       before_sha: ${{ github.event.before || '' }}
-      forced: ${{ toJSON(github.event.forced == true) }}
+      forced: ${{ github.event.forced == true }}
     secrets: inherit
