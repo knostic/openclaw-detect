@@ -1,8 +1,6 @@
 name: gitleaks
 on:
   push:
-    branches: [main]
-  pull_request:
 jobs:
   scan:
     uses: knostic/.github/.github/workflows/gitleaks.yaml@fix/gitleaks-scan-range
