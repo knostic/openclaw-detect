@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   scan:
-    uses: knostic/.github/.github/workflows/gitleaks.yaml@fix/gitleaks-scan-range
+    uses: knostic/.github/.github/workflows/gitleaks.yaml@dcc58a2ba99425861ace0857b8644eb2165f2aed
     with:
       event_name: ${{ github.event_name }}
       before_sha: ${{ github.event.before || '' }}
