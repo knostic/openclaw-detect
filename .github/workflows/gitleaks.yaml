@@ -10,5 +10,5 @@ jobs:
       event_name: ${{ github.event_name }}
       base_sha: ${{ github.event.pull_request.base.sha || '' }}
       before_sha: ${{ github.event.before || '' }}
-      forced: ${{ github.event.forced == true }}
+      forced: ${{ toJSON(github.event.forced == true) }}
     secrets: inherit
