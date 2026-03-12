@@ -1,0 +1,45 @@
+name: gitleaks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  gitleaks:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set scan range
+        id: range
+        run: |
+          NULL_SHA="0000000000000000000000000000000000000000"
+          EVENT="${{ github.event_name }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          BEFORE_SHA="${{ github.event.before }}"
+          FORCED="${{ github.event.forced }}"
+
+          if [ "$EVENT" = "pull_request" ] && [ -n "$BASE_SHA" ]; then
+            # PR: scan only the new commits
+            echo "log_opts=${BASE_SHA}..HEAD" >> $GITHUB_OUTPUT
+          elif [ "$EVENT" = "push" ] && [ "$FORCED" != "true" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "$NULL_SHA" ]; then
+            # Push: scan since last known commit (skip null/force-push cases)
+            echo "log_opts=${BEFORE_SHA}..HEAD" >> $GITHUB_OUTPUT
+          else
+            # Fallback: full scan (first push, force push, or caller did not pass inputs)
+            echo "log_opts=" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
+          GITLEAKS_LOG_OPTS: ${{ steps.range.outputs.log_opts }}
