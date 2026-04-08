@@ -1,4 +1,4 @@
-name: Test Detection Scripts
+name: Test Scripts
 
 on:
   push:
@@ -14,15 +14,38 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+
       - name: Run detection script
         run: |
           chmod +x detect-openclaw.sh
           ./detect-openclaw.sh
 
+      - name: Run removal script
+        run: |
+          chmod +x remove-openclaw.sh
+          ./remove-openclaw.sh
+
+      - name: Install bats-core
+        run: |
+          git clone --depth 1 https://github.com/bats-core/bats-core.git /tmp/bats-core
+          sudo /tmp/bats-core/install.sh /usr/local
+
+      - name: Run removal tests
+        run: bats tests/remove-openclaw.bats
+
   test-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Run detection script
         run: .\detect-openclaw.ps1
+        shell: powershell
+
+      - name: Run removal script
+        run: .\remove-openclaw.ps1
+        shell: powershell
+
+      - name: Run removal tests
+        run: Invoke-Pester -Path tests\remove-openclaw.Tests.ps1 -Output Detailed -CI
         shell: powershell
